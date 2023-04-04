@@ -4,6 +4,7 @@ import { Switch, Link, Route } from 'react-router-dom';
 
 import KaydedilenlerListesi from './Filmler/KaydedilenlerListesi';
 import FilmListesi from './Filmler/FilmListesi';
+import Film from './Filmler/Film';
 
 export default function App () {
   const [saved, setSaved] = useState([]); // Stretch: the ids of "saved" movies
@@ -37,6 +38,9 @@ export default function App () {
       <Switch>
         <Route exact path={'/'}>
           <FilmListesi movies={movieList}/>
+        </Route>
+        <Route path={'/movies/:id'}>
+          <Film /> 
         </Route>
       </Switch>
 
